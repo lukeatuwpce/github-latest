@@ -12,9 +12,9 @@ if __name__ == "__main__":
     # TODO:
     #
     # 1. Retrieve a list of "events" associated with the given user name
+
+    req = requests.get(f'https://api.github.com/users/{username}/events')
+
     # 2. Print out the time stamp associated with the first event in that list.
 
-    print("COMPLETE THE TODOs")
-    
-
-
+    print(req.json()[0]['created_at'])
